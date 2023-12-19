@@ -1,0 +1,14 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// uuid = Universal Unique ID, ex: b77e0f68-07bf-11ee-be56-0242ac120002
+model User {
+  id   String @id @default(uuid())
+  name String
+}
